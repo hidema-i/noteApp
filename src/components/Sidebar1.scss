@@ -11,11 +11,51 @@ button {
 .app-sidebar {
   width: 30%;
   height: 100vh;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid rgb(66, 61, 208);
+  
 }
 
 .app-sidebar-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 25px;
+
+  h1 {
+    margin: 0;
+  }
 }
+
+.app-sidebar-notes {
+  height: calc(100vh - 78px);
+  overflow-y: scroll;
+}
+
+.app-sidebar-note {
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover{
+    background-color: rgb(210, 210, 210);
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  small {
+    color: #999;
+  }
+
+  
+}
+
+.sidebar-note-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+ 
+
+
+
