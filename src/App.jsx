@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Main from "./components/Main";
 import Sidebar from "./components/Sidebar";
+import uuid from "react-uuid";
 
 function App() {
   //複数の追加Noteを格納する配列
@@ -9,7 +10,7 @@ function App() {
 
   const onAddNote = () => {
     const newNote = {
-      id: 1,
+      id: uuid(),
       title: "NewNote!",
       content: "NewNoteSample",
       modDate: Date.now(),
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar onAddNote={onAddNote} />
+      <Sidebar onAddNote={onAddNote} notes={notes} />
       <Main />
     </div>
   );
