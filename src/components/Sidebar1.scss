@@ -39,6 +39,11 @@ button {
     background-color: rgb(210, 210, 210);
   }
 
+  &.active{
+    background-color: rgb(210, 210, 210);
+
+  }
+
   p {
     margin: 10px 0;
   }
@@ -46,8 +51,6 @@ button {
   small {
     color: #999;
   }
-
-  
 }
 
 .sidebar-note-title {

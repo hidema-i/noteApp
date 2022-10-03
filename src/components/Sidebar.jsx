@@ -1,19 +1,30 @@
 import React from "react";
 import "./Sidebar1.css";
 
-const Sidebar = ({ onAddNote, notes }) => {
+const Sidebar = ({
+  onAddNote,
+  notes,
+  onDeleteNote,
+  activeNote,
+  setActiveNote,
+}) => {
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
         <h1>note</h1>
-        <button onClick={onAddNote}>insert</button>
+        <button onClick={onAddNote}>INSERT</button>
       </div>
       <div className="app-sidebar-notes">
         {notes.map((note) => (
-          <div className="app-sidebar-note" key={note.id}>
+          <div
+            className={`app-sidebar-note ${note.id === activeNote && "active"}`}
+            key={note.id}
+            onClick={() => setActiveNote(note.id)}
+          >
             <div className="sidebar-note-title">
               <strong>{note.title}</strong>
-              <button>delete</button>
+              {/* deleteはアロー関数で記載※そうしないとリロード時に発火する */}
+              <button onClick={() => onDeleteNote(note.id)}>DELETE</button>
             </div>
             <p>{note.content}</p>
             <small>

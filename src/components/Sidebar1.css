@@ -36,6 +36,9 @@ button {
 .app-sidebar-note:hover {
   background-color: rgb(210, 210, 210);
 }
+.app-sidebar-note.active {
+  background-color: rgb(210, 210, 210);
+}
 .app-sidebar-note p {
   margin: 10px 0;
 }
